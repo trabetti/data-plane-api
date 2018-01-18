@@ -342,6 +342,7 @@ proto_library(
         "//api/filter/http:ext_authz",
         "//api/filter/http:fault",
         "//api/filter/http:health_check",
+        "//api/filter/http:ip_tagging",
         "//api/filter/http:lua",
         "//api/filter/http:rate_limit",
         "//api/filter/http:router",

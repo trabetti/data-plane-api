@@ -16,6 +16,7 @@ api_cc_test(
         "//api/filter/http:buffer",
         "//api/filter/http:fault",
         "//api/filter/http:health_check",
+        "//api/filter/http:ip_tagging",
         "//api/filter/http:lua",
         "//api/filter/http:router",
         "//api/filter/http:squash",

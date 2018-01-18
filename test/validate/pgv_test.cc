@@ -14,6 +14,7 @@
 #include "api/filter/http/buffer.pb.validate.h"
 #include "api/filter/http/fault.pb.validate.h"
 #include "api/filter/http/health_check.pb.validate.h"
+#include "api/filter/http/ip_tagging.pb.validate.h"
 #include "api/filter/http/lua.pb.validate.h"
 #include "api/filter/http/router.pb.validate.h"
 #include "api/filter/http/squash.pb.validate.h"

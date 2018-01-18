@@ -39,7 +39,7 @@ message IPTagging {
   //
   //  The fill_factor supports a value greater than 0 and less than or equal
   //  to 1.
-  double fill_factor = 2 [(validate.rules).double = {gt: 0.0, lte: 1.0}];
+  google.protobuf.DoubleValue fill_factor = 2 [(validate.rules).double = {gt: 0.0, lte: 1.0}];
 
   // Specifies the branch value to use at the root of the trie. If not
   // set, the default value is 0 and a branch value will be calculated.
@@ -47,7 +47,7 @@ message IPTagging {
   // .. note::
   //
   //  The filter supports a range 0 - 20 inclusively for root branching factor.
-  uint32 root_branching_factor = 3 [(validate.rules).uint32 = {gte: 0, lte: 20}];
+  google.protobuf.UInt32Value root_branching_factor = 3 [(validate.rules).uint32 = {gte: 0, lte: 20}];
 
   //
   repeated IPTag ip_tags = 4;

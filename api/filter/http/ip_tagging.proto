@@ -4,6 +4,8 @@ package envoy.api.v2.filter.http;
 
 import "api/address.proto";
 
+import "google/protobuf/wrappers.proto";
+
 import "validate/validate.proto";
 
 

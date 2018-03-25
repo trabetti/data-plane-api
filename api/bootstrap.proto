@@ -94,17 +94,9 @@ message StatsdSink {
   }
 }
 
-// Stats proto for "envoy.hystrix_stream" sink.
-message HystrixStreamSink {
-  oneof hystrix_stream_specifier {
-    // The UDP address of a running statsd compliant listener. If specified,
-    // statistics will be flushed to this address.
-    Address address = 1;
-    // The name of a cluster manager cluster that is running a TCP statsd
-    // compliant listener. If specified, Envoy will connect to this cluster to
-    // flush statistics.
-    string tcp_cluster_name = 2;
-  }
+// Stats proto for "envoy.hystrix" sink.
+message HystrixSink {
+  optional int64 num_of_buckets = 1;
 }
 
 message StatsSink {

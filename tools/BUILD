@@ -1,11 +1,13 @@
+licenses(["notice"])  # Apache 2
+
 py_binary(
     name = "generate_listeners",
     srcs = ["generate_listeners.py"],
     licenses = ["notice"],  # Apache 2
     visibility = ["//visibility:public"],
     deps = [
-        "//api:lds_py",
-        "//api/filter/http:http_connection_manager_py",
+        "//envoy/api/v2:lds_py",
+        "//envoy/config/filter/network/http_connection_manager/v2:http_connection_manager_py",
     ],
 )
 

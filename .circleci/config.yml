@@ -1,8 +1,12 @@
+references:
+  envoy-build-image: &envoy-build-image
+    envoyproxy/envoy-build:220e5cb537b5185c953de1aac7d0613f8cf155ac
+
 version: 2
 jobs:
    test:
      docker:
-       - image: lyft/envoy-build:114e24c6fd05fc026492e9d2ca5608694e5ea59d
+       - image: *envoy-build-image
      resource_class: xlarge
      working_directory: /source
      steps:
@@ -10,12 +14,24 @@ jobs:
        - run: ci/do_ci.sh bazel.test
    docs:
      docker:
-       - image: lyft/envoy-build:114e24c6fd05fc026492e9d2ca5608694e5ea59d
+       - image: *envoy-build-image
      resource_class: xlarge
      working_directory: /source
      steps:
        - checkout
        - run: ci/do_ci.sh bazel.docs
+       - add_ssh_keys
+       - run: docs/publish.sh
+       - store_artifacts:
+           path: generated/docs
+   format:
+     docker:
+       - image: *envoy-build-image
+     resource_class: xlarge
+     working_directory: /source
+     steps:
+       - checkout
+       - run: ci/do_ci.sh check_format
 
 workflows:
   version: 2
@@ -23,3 +39,4 @@ workflows:
     jobs:
       - test
       - docs
+      - format

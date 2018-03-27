@@ -141,21 +141,21 @@ message TagSpecifier {
 
 // Stats configuration proto schema for built-in *envoy.statsd* sink. This sink does not support
 // tagged metrics.
-message StatsdSink {
-  oneof statsd_specifier {
-    option (validate.required) = true;
+//message StatsdSink {
+//  oneof statsd_specifier {
+//    option (validate.required) = true;
 
     // The UDP address of a running `statsd <https://github.com/etsy/statsd>`_
     // compliant listener. If specified, statistics will be flushed to this
     // address.
-    envoy.api.v2.core.Address address = 1;
+//    envoy.api.v2.core.Address address = 1;
 
     // The name of a cluster that is running a TCP `statsd
     // <https://github.com/etsy/statsd>`_ compliant listener. If specified,
     // Envoy will connect to this cluster to flush statistics.
-    string tcp_cluster_name = 2;
-  }
-}
+//    string tcp_cluster_name = 2;
+//  }
+//}
 
 // can it be empty?
 message HystrixSink {

@@ -157,6 +157,11 @@ message StatsdSink {
   }
 }
 
+// can it be empty?
+message HystrxSink {
+}
+
+
 // Stats configuration proto schema for built-in *envoy.dog_statsd* sink.
 // The sink emits stats with `DogStatsD <https://docs.datadoghq.com/guides/dogstatsd/>`_
 // compatible tags. Tags are configurable via :ref:`StatsConfig

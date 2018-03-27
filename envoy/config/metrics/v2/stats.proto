@@ -159,6 +159,7 @@ message StatsdSink {
 
 // can it be empty?
 message HystrxSink {
+  int64 num_of_buckets = 1;
 }
 
 

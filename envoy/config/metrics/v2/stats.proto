@@ -158,7 +158,7 @@ message StatsdSink {
 }
 
 // can it be empty?
-message HystrxSink {
+message HystrixSink {
   int64 num_of_buckets = 1;
 }
 
